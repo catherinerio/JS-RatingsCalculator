@@ -7,14 +7,14 @@ function collect_ratings(){
 let rating=0;
 
 const elements = document.querySelectorAll(".rating");
-array.forEach(elements => {
+elements.forEach(elements => {
    rating = parseInt( elements.id.replace('star', ''));
     ratings .count += parseInt(elements.value);
     ratings.sum += parseInt(elements.value*rating);
 
 });
 if (ratings.count !=0){
-ratings.average = (sum/count);
+ratings.average = (ratings.sum/ratings.count);
 }
 return ratings;
 };
