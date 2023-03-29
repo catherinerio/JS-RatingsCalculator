@@ -1,24 +1,25 @@
 function collect_ratings(){
-    let rating=0;
     const ratings ={
-    count: '0',
-    sum: '0',
-    average: '0'
+    'count': 0,
+    'sum': 0,
+    'average': 0
 };
+let rating=0;
+
 const elements = document.querySelectorAll(".rating");
 array.forEach(elements => {
-   rating = parseInt( elements.id.replace('star', '')),
-    parseInt(count += elements.value),
-    parseInt(sum += (elements.value*rating));
+   rating = parseInt( elements.id.replace('star', ''));
+    ratings .count += parseInt(elements.value);
+    ratings.sum += parseInt(elements.value*rating);
 
 });
-if (ratings[count] !=0){
+if (ratings.count !=0){
 ratings.average = (sum/count);
 }
 return ratings;
 };
 document.addEventListener('change',()=> {
     const ratings = collect_ratings();
-    ratings.average=(document.querySelector(".average").value).toFixed(2);
+  (document.querySelector("#average").value)= ratings.average.toFixed(2);
 
 })
